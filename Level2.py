@@ -3,19 +3,19 @@ def rarity(filename):
         s = file.read().replace("\n", "")
 
     rarity = {}
-    final = ""
+    rareString = ""
 
-    for c in s:
-        if c not in rarity:
-            rarity[c] = 1
+    for char in s:
+        if char not in rarity:
+            rarity[char] = 1
         else:
-            rarity[c] += 1
+            rarity[char] += 1
 
     for keys in rarity:
         if rarity[keys] == 1:
-            final += keys
+            rareString += keys
 
     file.close()
-    return final
+    return rareString
 
 print(rarity("files/RareCharData.txt"))
